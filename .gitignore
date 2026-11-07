@@ -1,0 +1,9 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+# Optional machine-local integration configuration; the reusable examples are tracked.
+/opencode/opencode.json
+/opencode/opencode.jsonc
+/claude-code/.mcp.json
+/codex/.codex/config.toml
