@@ -1,6 +1,6 @@
 # Claude Code version
 
-This setup adds project instructions, a review command, and a reviewer to [Claude Code](https://code.claude.com/docs/en/overview).
+This setup adds project instructions, an explore command, an exploration skill, and a read-only explorer to [Claude Code](https://code.claude.com/docs/en/overview).
 
 ## Set up
 
@@ -23,20 +23,23 @@ Type these inside Claude Code:
 
 | Command | What it does |
 | --- | --- |
-| `/review-code` | Reviews your current changes |
-| `/review-code path/to/file` | Reviews one file |
+| `/explore-repo` | Maps the whole project and explains how it fits together |
+| `/explore-repo .claude` | Explores one folder |
+| `/explore-repo how does the explorer find its skill?` | Answers a question about the project |
+
+It only reads files, so it works on any project, including one with no application code.
 
 ## What's in the folder
 
 | File | What it's for |
 | --- | --- |
 | `CLAUDE.md` | Rules Claude follows in your project; add your own project notes here |
-| `.claude/commands/` | The `/review-code` command |
-| `.claude/skills/review-procedure/` | The steps and checklist for a code review |
-| `.claude/agents/reviewer.md` | The reviewer, which can only read and search files |
+| `.claude/commands/` | The `/explore-repo` command |
+| `.claude/skills/explore-procedure/` | The steps and checklist for exploring a project |
+| `.claude/agents/repo-explorer.md` | The explorer, which can only read and search files |
 | `mcp.json.example` | Optional browser testing setup |
 
-The review command uses a different name from the other versions so it doesn't clash with Claude Code's built-in `/review`.
+Start Claude Code from the folder that contains `.claude/`. Commands, skills, and agents load from there when a session starts.
 
 ## Optional add-ons
 
@@ -55,7 +58,7 @@ Start a new session and try `/ponytail-help`. This may apply to your other proje
 
 ## Not tested yet
 
-Claude Code 2.1.303 finds the reviewer, skill, and command, but they haven't been run with a live model. Try `/review-code` on a small change first.
+The explorer, skill, and command haven't been checked in Claude Code or run with a live model yet. Type `/` to confirm `/explore-repo` is listed, then try it.
 
 ## Learn more
 

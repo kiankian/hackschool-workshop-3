@@ -11,7 +11,7 @@
 - Reuse existing patterns and dependencies. Explain why a new dependency is needed and update the appropriate lockfile when adding one.
 - Validate untrusted inputs at boundaries. Keep credentials out of source, logs, and reports. Preserve accessibility and keyboard behavior when changing interfaces.
 - Add meaningful regression coverage for changed behavior when appropriate. Run the project's relevant tests, lint/type checks, and build when they exist; do not invent commands or claim skipped checks passed.
-- Use the review-procedure skill for deliberate reviews. Respect the reviewer subagent's read-only tools; the implementing agent runs tests and fixes findings.
+- Use the explore-procedure skill when asked to explore, map, or explain a project. Respect the repo-explorer subagent's read-only tools; the main agent verifies its claims and makes any edits.
 - For browser-facing changes, use Playwright MCP when available and an actual supplied or observed application URL. For other projects, choose verification relevant to the change.
 
 ## Report and respect scope
