@@ -5,6 +5,5 @@
 # Optional machine-local integration configuration; the reusable examples are tracked.
 /opencode/opencode.json
 /opencode/opencode.jsonc
-/.mcp.json
-/claude-code/.mcp.json
+/claude-code/.claude/settings.local.json
 /codex/.codex/config.toml
