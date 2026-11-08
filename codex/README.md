@@ -1,6 +1,6 @@
 # Codex version
 
-This setup adds project instructions, review and ship workflows, and a reviewer to [Codex](https://learn.chatgpt.com/docs/agent-configuration/agents-md).
+This setup adds project instructions, a review workflow, and a reviewer to [Codex](https://learn.chatgpt.com/docs/agent-configuration/agents-md).
 
 ## Set up
 
@@ -25,23 +25,22 @@ Type these inside Codex. They start with `$`, not `/`:
 | --- | --- |
 | `$review-changes` | Reviews your current changes |
 | `$review-changes path/to/file` | Reviews one file |
-| `$ship Add a check for empty input` | Makes the change, tests it, gets it reviewed, and reports back |
 
-`$ship` edits your files and only runs when you ask for it. It won't commit or publish anything unless you ask. If you're changing a website, include its URL in your request. Type `/skills` to see what's available.
+Type `/skills` to see what's available.
 
 ## What's in the folder
 
 | File | What it's for |
 | --- | --- |
 | `AGENTS.md` | Rules Codex follows in your project; add your own project notes here, then restart Codex |
-| `.agents/skills/ship/` and `review-changes/` | The `$ship` and `$review-changes` commands |
+| `.agents/skills/review-changes/` | The `$review-changes` command |
 | `.agents/skills/code-review/` | The steps and checklist for a code review |
 | `.codex/agents/reviewer.toml` | The reviewer |
 | `config.toml.example` | Optional browser testing setup |
 
 ## The reviewer can still make changes
 
-In Codex, the reviewer is told not to change anything, but nothing technically stops it. As a safety check, `$ship` compares your files before and after the review and reports any differences.
+In Codex, the reviewer is told not to change anything, but nothing technically stops it. As a safety check, run `git status` after a review to confirm nothing changed.
 
 For stronger protection, review in a separate session with `codex --sandbox read-only`. [Codex's permissions docs](https://learn.chatgpt.com/codex/permissions) explain what that blocks.
 
@@ -62,7 +61,7 @@ Then run `codex`, type `/hooks`, review and trust its two hooks, and start a new
 
 ## Not tested yet
 
-This version was written from the Codex docs and hasn't been run in Codex at all. Start with `/skills` to confirm Codex finds it, then try `$ship` on a small change.
+This version was written from the Codex docs and hasn't been run in Codex at all. Start with `/skills` to confirm Codex finds it, then try `$review-changes` on a small change.
 
 ## Learn more
 

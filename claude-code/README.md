@@ -1,6 +1,6 @@
 # Claude Code version
 
-This setup adds project instructions, review and ship commands, and a reviewer to [Claude Code](https://code.claude.com/docs/en/overview).
+This setup adds project instructions, a review command, and a reviewer to [Claude Code](https://code.claude.com/docs/en/overview).
 
 ## Set up
 
@@ -25,21 +25,18 @@ Type these inside Claude Code:
 | --- | --- |
 | `/review-code` | Reviews your current changes |
 | `/review-code path/to/file` | Reviews one file |
-| `/ship Add a check for empty input` | Makes the change, tests it, gets it reviewed, and reports back |
-
-`/ship` edits your files and only runs when you type it. It won't commit or publish anything unless you ask. If you're changing a website, include its URL in your request.
 
 ## What's in the folder
 
 | File | What it's for |
 | --- | --- |
 | `CLAUDE.md` | Rules Claude follows in your project; add your own project notes here |
-| `.claude/commands/` | The `/review-code` and `/ship` commands |
+| `.claude/commands/` | The `/review-code` command |
 | `.claude/skills/review-procedure/` | The steps and checklist for a code review |
 | `.claude/agents/reviewer.md` | The reviewer, which can only read and search files |
 | `mcp.json.example` | Optional browser testing setup |
 
-These commands use different names from the other versions so they don't clash with Claude Code's built-in `/review`.
+The review command uses a different name from the other versions so it doesn't clash with Claude Code's built-in `/review`.
 
 ## Optional add-ons
 
@@ -58,7 +55,7 @@ Start a new session and try `/ponytail-help`. This may apply to your other proje
 
 ## Not tested yet
 
-Claude Code 2.1.303 finds the reviewer, skill, and commands, but they haven't been run with a live model. Try `/ship` on a small change first.
+Claude Code 2.1.303 finds the reviewer, skill, and command, but they haven't been run with a live model. Try `/review-code` on a small change first.
 
 ## Learn more
 

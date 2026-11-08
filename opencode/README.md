@@ -1,6 +1,6 @@
 # OpenCode version
 
-This setup adds project instructions, review and ship commands, and a reviewer to [OpenCode v2](https://dev.opencode.ai/v2/docs/).
+This setup adds project instructions, a review command, and a reviewer to [OpenCode v2](https://dev.opencode.ai/v2/docs/).
 
 ## Set up
 
@@ -25,16 +25,13 @@ Type these inside OpenCode:
 | --- | --- |
 | `/review` | Reviews your current changes |
 | `/review path/to/file` | Reviews one file |
-| `/ship Add a check for empty input` | Makes the change, tests it, gets it reviewed, and reports back |
-
-`/ship` edits your files. It won't commit or publish anything unless you ask. If you're changing a website, include its URL in your request.
 
 ## What's in the folder
 
 | File | What it's for |
 | --- | --- |
 | `AGENTS.md` | Rules OpenCode follows in your project; add your own project notes here |
-| `.opencode/commands/` | The `/review` and `/ship` commands |
+| `.opencode/commands/` | The `/review` command |
 | `.opencode/skills/code-review/` | The steps and checklist for a code review |
 | `.opencode/agents/reviewer.md` | The reviewer, which is blocked from editing files or running commands |
 | `opencode.json.example` | Optional add-on setup |
@@ -51,7 +48,7 @@ Both add-ons download and run third-party code when OpenCode starts, so look the
 
 ## Not tested yet
 
-OpenCode 2.2.5 finds the reviewer, but the setup hasn't been run with a live model. The skill and commands haven't been checked either. Try `/ship` on a small change first.
+OpenCode 2.2.5 finds the reviewer, but the setup hasn't been run with a live model. The skill and command haven't been checked either. Try `/review` on a small change first.
 
 ## Learn more
 

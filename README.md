@@ -16,7 +16,6 @@ Pick the tool you use and follow the README in its folder. You only need one.
 
 - **Project instructions:** rules the agent follows every time you use it in that project.
 - **A review command:** asks the agent to check your code for bugs and missing tests.
-- **A ship command:** takes a change from request to finished work: build it, test it, review it, and report back.
 - **A reviewer:** a second agent that checks the work and isn't meant to change anything.
 - **Optional add-ons:** browser testing with Playwright, and extra coding guidance with Ponytail.
 
