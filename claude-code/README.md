@@ -1,6 +1,6 @@
 # Claude Code version
 
-This setup adds project instructions, an explore command, an exploration skill, and a read-only explorer to [Claude Code](https://code.claude.com/docs/en/overview).
+This setup adds project instructions, an explain command, a diagram skill, and a read-only explorer to [Claude Code](https://code.claude.com/docs/en/overview).
 
 ## Set up
 
@@ -19,23 +19,25 @@ You'll need Claude Code installed.
 
 ## Try it
 
-Type these inside Claude Code:
+Each piece starts a different way:
 
-| Command | What it does |
-| --- | --- |
-| `/explore-repo` | Maps the whole project and explains how it fits together |
-| `/explore-repo .claude` | Explores one folder |
-| `/explore-repo how does the explorer find its skill?` | Answers a question about the project |
+| Piece | How to start it | Example |
+| --- | --- | --- |
+| Command | Type it with a slash | `/explain .mcp.json` explains one file in plain language |
+| Skill | Ask in your own words; Claude picks it up | `Draw a diagram of how the files in .claude connect` |
+| Subagent | Ask for it by name | `Use the repo-explorer subagent to map this project` |
 
-It only reads files, so it works on any project, including one with no application code.
+All three only read files, so they work on any project, including one with no application code.
+
+You can tell which piece ran from the reply: `/explain` starts with `## 💡 Explained:` and the skill starts with `## 📐 Diagram:`. The command only runs when you type it; Claude won't start it on its own.
 
 ## What's in the folder
 
 | File | What it's for |
 | --- | --- |
 | `CLAUDE.md` | Rules Claude follows in your project; add your own project notes here |
-| `.claude/commands/` | The `/explore-repo` command |
-| `.claude/skills/explore-procedure/` | The steps and checklist for exploring a project |
+| `.claude/commands/explain.md` | The `/explain` command |
+| `.claude/skills/diagram-maker/` | Draws Mermaid diagrams of how things connect; Claude uses it on its own when you ask for a diagram |
 | `.claude/agents/repo-explorer.md` | The explorer, which can only read and search files |
 | `mcp.json.example` | Optional browser testing setup |
 
@@ -58,7 +60,7 @@ Start a new session and try `/ponytail-help`. This may apply to your other proje
 
 ## Not tested yet
 
-The explorer, skill, and command haven't been checked in Claude Code or run with a live model yet. Type `/` to confirm `/explore-repo` is listed, then try it.
+The explorer, skill, and command haven't been checked in Claude Code or run with a live model yet. Type `/` to confirm `/explain` is listed, then try it.
 
 ## Learn more
 

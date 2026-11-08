@@ -7,3 +7,5 @@
 /opencode/opencode.jsonc
 /claude-code/.claude/settings.local.json
 /codex/.codex/config.toml
+# Playwright MCP session output (console logs, page snapshots).
+.playwright-mcp/
